@@ -1,0 +1,24 @@
+Comando para iniciar hadoop
+start-dfs.sh
+start-yarn.sh
+comando para crear directorios de almacenamiento en hive
+Paso1: ubicarse en la carpeta hive
+cd hive
+Paso2: creando carpeta warehouse
+hdfs dfs -mkdir -p /user/hive/warehouse
+Paso3: creando carpeta temp
+hdfs dfs -mkdir -p /user/tmp
+Paso 4: Dando permisos de lectura y escritura a Hive
+hdfs dfs -chmod g+w /user/tmp
+hdfs dfs -chmod g+w /user/hive/warehouse
+Paso5: Comporvando los permisos
+hdfs dfs -ls -R /user
+
+
+%-------------------------------------------------------------------%
+creando base de datos hive Metastore Derby 
+Paso 1: estando en hive copiamos el siguiente comando
+cd $HIVE_HOME
+Paso 2: Despues creamos el metastore con el comando
+bin/schematool -initSchema -dbType derby
+
