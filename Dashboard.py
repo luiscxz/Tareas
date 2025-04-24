@@ -23,7 +23,7 @@ dataset['MeanSales'] = dataset['MeanSales']/1e6
 
 # Inicializar la app Dash
 app = Dash(__name__)
-
+server = app.server
 app.layout = html.Div([
     # Primera fila: Pie chart y Bar chart
     html.Div([
